@@ -147,6 +147,6 @@ for elem in soup.find_all('option'):
     countries_supply_chain.append(country_supply_chain)
 
 
-# Save result in a json file
+# Save the result in a json file
 save_in_json_format("data/countries_supply_chain.json", countries_supply_chain)
 
