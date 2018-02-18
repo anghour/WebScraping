@@ -100,7 +100,7 @@ def get_country_suppy_chain(browser, url):
         return wind_farm_map
 
     except :
-        print("ERREUR D'EXTRAcTION")
+        print("ERREUR D'EXTRACTION")
         return None
 
 
