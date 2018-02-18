@@ -100,7 +100,7 @@ def get_country_suppy_chain(browser, url):
         return wind_farm_map
 
     except :
-        print("ERREUR D'EXTRATION")
+        print("ERREUR D'EXTRAcTION")
         return None
 
 
@@ -129,10 +129,10 @@ for elem in soup.find_all('option'):
         time.sleep(4)
 
 
-        county_main_page = get_html_content(browser, main_link)
-        if(county_main_page != None):
+        country_main_page = get_html_content(browser, main_link)
+        if(country_main_page != None):
 
-            supply_chain_link = county_main_page.find(id='ctl00_Body_Page_SubMenu_hypSupplychain')
+            supply_chain_link = country_main_page.find(id='ctl00_Body_Page_SubMenu_hypSupplychain')
 
             if(supply_chain_link != None):
                 supply_chain_link = supply_chain_link['href']
@@ -141,8 +141,8 @@ for elem in soup.find_all('option'):
 
     if(supply_chain_link != None):
         supply_chain_link = url_base + supply_chain_link
-    county = Country(id, elem.text, main_link, supply_chain_link)
-    country_supply_chain = CountrySuppyChain(county, country_wind_farm_map)
+    country = Country(id, elem.text, main_link, supply_chain_link)
+    country_supply_chain = CountrySuppyChain(country, country_wind_farm_map)
     #print(country_supply_chain)
     countries_supply_chain.append(country_supply_chain)
 
